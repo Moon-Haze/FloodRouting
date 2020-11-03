@@ -28,7 +28,6 @@ public class SocketPool {
     public StreamSocket put(Address key) throws IOException {
         StreamSocket value = new StreamSocket(key);
         pool.put(key, value);
-        Start.getLogger().info("Connect the node ( " + key + " ) ");
         return value;
     }
 

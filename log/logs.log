@@ -53,3 +53,34 @@ Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6
 To 127.0.0.1:6871
 [20:02:19.427][INFO] Disconnect the node ( 127.0.0.1:6871) 
 [20:02:21.146][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[20:08:58.208][INFO]Starting...
+[20:09:00.247][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[20:09:02.268][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:09:07.053][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[20:09:25.011][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[20:09:32.056][INFO] Disconnect the node ( 127.0.0.1:6871) 
+[20:09:33.544][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[20:10:48.606][INFO]Starting...
+[20:10:50.658][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[20:10:52.689][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:10:53.699][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[20:11:03.484][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[20:12:08.860][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6869
+[20:12:08.862][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6871
+[20:13:04.194][INFO] Disconnect the node ( 127.0.0.1:6871) 
+[20:13:21.873][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[20:14:46.559][INFO]Starting...
+[20:14:48.603][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[20:14:50.635][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:14:57.148][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[20:15:04.003][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[20:15:44.558][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6871
+[20:15:44.559][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6869
