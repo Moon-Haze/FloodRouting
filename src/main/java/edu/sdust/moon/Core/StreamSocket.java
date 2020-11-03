@@ -28,7 +28,7 @@ public class StreamSocket {
         try {
             address = (Address) objectInputStream.readObject();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            Start.getLogger().error(e);
         }
     }
 

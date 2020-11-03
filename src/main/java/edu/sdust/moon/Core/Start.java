@@ -41,31 +41,49 @@ public class Start {
         try {
             node = Node.createNode(config.getLocalAddress());
             node.start();
+            config.getNodes().forEach(item -> {
+                try {
+                    node.connectNode(item);
+                } catch (IOException e) {
+                    logger.error("connect the node( " + item + " ) failed");
+                }
+            });
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(0);
             return;
         }
         Scanner scanner = new Scanner(System.in);
-
         String data;
         while ((data = scanner.nextLine()) != null) {
             try {
                 var arg = data.split(" ");
                 if (arg.length != 0) {
                     switch (arg[0]) {
-                        case ""->{}
+                        case "" -> {}
                         case "help" -> {
                             System.out.println("type in \"stop\"                           Turn off the node");
                             System.out.println("type in \"list\"                           Get a list of node's address");
-                            System.out.println("type in \"connect\"                        connect other nodes");
-                            System.out.println("type in \"connect <host>:<port>\"          connect a new node by host and port.");
+                            System.out.println("type in \"connect\"                        Connect other nodes again");
+                            System.out.println("type in \"connect <host>:<port>\"          Connect a new node by host and port.");
                             System.out.println("type in \"disconnect <host>:<port>\"       Disconnect the node");
                             System.out.println("type in \"sendData <data> <host>:<port>\"  Send data to one node( host:port )");
                         }
                         case "sendData" -> {
-                            if (arg.length == 3) {
-                                node.sendData(arg[1], arg[2]);
+                            if (arg.length >= 3) {
+                                for (String s : arg) {
+                                    System.out.println(s);
+                                }
+                                StringBuilder sb = new StringBuilder();
+                                try {
+                                    for (int i = 1; i < arg.length - 1; i++) {
+                                        sb.append(arg[i]);
+                                        sb.append(" ");
+                                    }
+                                }catch (ArrayIndexOutOfBoundsException e){
+                                    e.printStackTrace();
+                                }
+                                node.sendData(sb.toString(), arg[arg.length-1]);
                             } else {
                                 logger.error("Incorrect instruction");
                             }

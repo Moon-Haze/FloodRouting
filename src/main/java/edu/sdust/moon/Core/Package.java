@@ -6,7 +6,6 @@ public class Package implements Serializable {
     private static int upperLimit = 10;
     private int count = 0;
     private String message;
-    private Address prevNode;
     private Address from;
     private Address to;
 
@@ -16,14 +15,6 @@ public class Package implements Serializable {
 
     public String getMessage() {
         return message;
-    }
-
-    public Address getPrevNode() {
-        return prevNode;
-    }
-
-    public void setPrevNode(Address prevNode) {
-        this.prevNode = prevNode;
     }
 
     public Address getFrom() {
@@ -36,10 +27,6 @@ public class Package implements Serializable {
 
     public boolean isUseful() {
         return count <= upperLimit;
-    }
-
-    public static void setUpperLimit(int upperLimit) {
-        Package.upperLimit = upperLimit;
     }
 
     public void setMessage(String message) {

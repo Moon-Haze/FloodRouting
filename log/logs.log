@@ -1,2 +1,55 @@
-[21:21:22.171][INFO]Starting...
-[21:22:25.452][INFO]Starting...
+[19:34:32.216][INFO]Starting...
+[19:34:34.257][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:34:36.283][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:35:44.809][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[19:35:51.518][INFO] Disconnect the node ( 127.0.0.1:6871) 
+[19:37:29.746][INFO]Starting...
+[19:37:31.785][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:37:33.823][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:40:35.543][INFO]Starting...
+[19:40:37.600][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:40:39.636][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:43:01.957][INFO] Disconnect the node ( 127.0.0.1:6871) 
+[19:43:03.001][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[19:45:23.522][INFO]Starting...
+[19:45:25.572][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:45:27.601][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:45:45.563][INFO]The Node( 127.0.0.1:6869 ) had connected
+[19:45:54.258][INFO] Disconnect the node ( 127.0.0.1:6869) 
+[19:47:41.349][INFO]Starting...
+[19:47:43.399][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:47:45.436][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:47:49.307][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:48:02.957][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:50:12.275][ERROR]Error in console: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+[19:51:45.078][INFO]Starting...
+[19:51:45.132][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:51:45.134][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:51:45.162][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:51:45.162][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:52:09.160][ERROR]Error in console: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+[19:53:32.635][INFO]Starting...
+[19:53:32.691][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:53:32.711][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:53:32.724][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:53:32.726][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:53:52.530][ERROR]Error in console: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+[19:54:42.273][INFO]Starting...
+[19:54:42.331][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:54:42.334][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:54:42.371][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[19:54:42.372][INFO]Connect the node ( 127.0.0.1:6871 ) 
+[19:55:06.793][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6869
+[19:55:06.794][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6871
+[20:01:25.022][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6869
+[20:01:25.023][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "Hello World!!! ", from 127.0.0.1:6868, to 127.0.0.1:6873}
+To 127.0.0.1:6871
+[20:02:19.427][INFO] Disconnect the node ( 127.0.0.1:6871) 
+[20:02:21.146][INFO] Disconnect the node ( 127.0.0.1:6869) 

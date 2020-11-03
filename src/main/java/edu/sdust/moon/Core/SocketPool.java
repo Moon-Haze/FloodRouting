@@ -5,7 +5,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
 
 public class SocketPool {
 
@@ -19,10 +18,6 @@ public class SocketPool {
         return new SocketPool();
     }
 
-    public void put(Address key, StreamSocket value) {
-        pool.put(key, value);
-    }
-
     /**
      * 以 Address 创建 StreamSock 建立两个节点的连接
      *
@@ -33,7 +28,7 @@ public class SocketPool {
     public StreamSocket put(Address key) throws IOException {
         StreamSocket value = new StreamSocket(key);
         pool.put(key, value);
-        Start.getLogger().info("link the node (" + key + " ) ");
+        Start.getLogger().info("Connect the node ( " + key + " ) ");
         return value;
     }
 
@@ -89,9 +84,6 @@ public class SocketPool {
         return null;
     }
 
-    public Set<Address> keySet() {
-        return pool.keySet();
-    }
 
     public boolean containsKey(Address key) {
         return get(key) != null;
@@ -113,6 +105,7 @@ public class SocketPool {
                         Start.getLogger().error(" Disconnect the node ( " + address + ") failed");
                     }
                     pool.remove(address, value);
+                    break;
                 }
             }
         }

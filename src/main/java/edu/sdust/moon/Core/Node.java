@@ -5,12 +5,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.SocketException;
-import java.util.ArrayList;
 
 public class Node {
 
     private Address address;
-    private final ArrayList<Package> registerPackage = new ArrayList<>();
+    private final TimeHashSet registerPackage = new TimeHashSet();
     private final SocketPool pool = SocketPool.createPool();
     private ServerSocket receiver;
 
@@ -24,9 +23,6 @@ public class Node {
         return node;
     }
 
-    public Address getAddress() {
-        return address;
-    }
 
     public void connectNode(Address address) throws IOException {
         if (!pool.containsKey(address)) {
@@ -84,42 +80,37 @@ public class Node {
     public void receivePackage(StreamSocket socket) {
         new Thread(() -> {
             Address sockAddress = socket.getAddress();
+            Start.getLogger().info("Connect the node ( " + sockAddress + " ) ");
             try {
                 ObjectInputStream ois = socket.getObjectInputStream();
-                Package p = null;
+                Package p;
                 while ((!socket.isClosed()) && (p = (Package) ois.readObject()) != null) {
                     if (registerPackage.contains(p)) {
                         Start.getLogger().info("Node ( " + sockAddress + " ) had received a repeated Package from ( "
                                 + p.getFrom() + " )\n" + p);
                     } else {
                         registerPackage.add(p);
-                        if (getAddress().equals(p.getTo())) {
-                            Start.getLogger().info("Node ( " + sockAddress + " ) had received a package to other node from ( "
-                                    + p.getFrom() + " \n)" + p);
-                        } else if (p.isUseful()) {
+                        if (address.equals(p.getTo())) {
                             Start.getLogger().info("Node ( " + sockAddress + " ) had received a package  node from ( "
-                                    + p.getFrom() + " \n)" + p);
+                                    + p.getFrom() + " )\n\n" + p + "\n");
+                        } else if (p.isUseful()) {
+                            Start.getLogger().info("Node ( " + sockAddress + " ) had received a package to other node from ( "
+                                    + p.getFrom() + " )\n" + p);
                             p.countAdd();
                             sendPackage(p, sockAddress);
                         } else {
                             Start.getLogger().info("Node ( " + sockAddress + " ) had received a invalid Package"
-                                    + " from ( " + p.getFrom() + " )");
+                                    + " from ( " + p.getFrom() + " )\n" + p);
                         }
                     }
                 }
             } catch (SocketException e) {
                 pool.remove(sockAddress);
-//                System.out.println("Node receivePackage SocketException");
             } catch (ClassNotFoundException | IOException e) {
                 Start.getLogger().error(e);
-//                System.out.println("Node receivePackage ClassNotFoundException/IOException");
             }
         }).start();
     }
-
-//    public boolean containsKey(Address key) {
-//        return pool.containsKey(key);
-//    }
 
     public void stop() {
         pool.removeAll();
@@ -127,7 +118,6 @@ public class Node {
             receiver.close();
         } catch (IOException e) {
             Start.getLogger().error(e);
-//            System.out.println("error");
         }
         System.exit(0);
     }
