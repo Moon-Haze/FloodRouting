@@ -1,0 +1,4 @@
+[19:50:10.034][INFO]Node ( 127.0.0.1:6869 ) has send a Package
+Package{count=1, message: "HelloWorld!!!", from 127.0.0.1:6869, to 127.0.0.1:6871}
+To 127.0.0.1:6871
+
