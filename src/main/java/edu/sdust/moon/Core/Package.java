@@ -43,9 +43,7 @@ public class Package implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
+        if (obj == null) return false;
         Package p = (Package) obj;
         return this.to.equals(p.to) && this.from.equals(p.from) && this.message.equals(p.message);
     }
