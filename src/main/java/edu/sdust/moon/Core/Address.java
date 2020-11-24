@@ -3,7 +3,7 @@ package edu.sdust.moon.Core;
 import java.io.Serializable;
 
 public class Address implements Serializable {
-    private String host;
+    private String ip;
     private int port;
 
     public static Address createAddress(String path) {
@@ -11,12 +11,12 @@ public class Address implements Serializable {
         return new Address(ad[0], Integer.parseInt(ad[1]));
     }
 
-    public String getHost() {
-        return host;
+    public String getIp() {
+        return ip;
     }
 
-    public void setHost(String host) {
-        this.host = host;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public int getPort() {
@@ -31,14 +31,8 @@ public class Address implements Serializable {
     }
 
     public Address(String host, int port) {
-        this.host = host;
+        this.ip = host;
         this.port = port;
-    }
-
-    public Address(String address) {
-        String[] strings = address.split(":");
-        this.host = strings[0];
-        this.port = Integer.parseInt(strings[1]);
     }
 
     @Override
@@ -47,11 +41,11 @@ public class Address implements Serializable {
             return false;
         }
         Address address = (Address) obj;
-        return this.host.equals(address.host) && this.port == address.port;
+        return this.ip.equals(address.ip) && this.port == address.port;
     }
 
     @Override
     public String toString() {
-        return host + ":" + port;
+        return ip + ":" + port;
     }
 }

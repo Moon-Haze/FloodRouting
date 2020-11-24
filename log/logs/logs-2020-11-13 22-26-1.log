@@ -1,9 +1,0 @@
-[22:17:21.695][INFO]Starting...
-[22:17:21.763][INFO]Connect the node ( 127.0.0.1:6869 ) 
-[22:17:21.765][INFO]Connect the node ( 127.0.0.1:6871 ) 
-[22:17:58.974][INFO]Node ( 127.0.0.1:6868 ) has send a Package
-Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6873}
-To 127.0.0.1:6869
-[22:17:58.976][INFO]Node ( 127.0.0.1:6868 ) has send a Package
-Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6873}
-To 127.0.0.1:6871

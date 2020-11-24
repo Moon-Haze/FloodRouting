@@ -5,6 +5,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class Node {
 
@@ -23,17 +25,29 @@ public class Node {
         return node;
     }
 
+    public Set<Address> getLinkNodes() {
+        return pool.keySet();
+    }
 
-    public void connectNode(Address address) throws IOException {
+    public void connectNode(Address address) {
         if (!pool.containsKey(address)) {
-            receivePackage(pool.put(address));
+            StreamSocket socket = pool.put(address);
+            if (socket != null) {
+                receivePackage(socket);
+                Start.getConfig().getNodes().add(address);
+                Start.getLogger().info("connect the node( " + address + " ) successfully");
+            }
         } else {
-            Start.getLogger().info("The Node( " + address + " ) had connected");
+            Start.getLogger().info("The Node( " + address + " ) had been connected");
         }
     }
 
     public void disconnectNode(Address address) {
-        pool.remove(address);
+        if (pool.containsKey(address)) {
+            pool.remove(address);
+        } else {
+            Start.getLogger().info("The Node( " + address + " ) is not connected");
+        }
     }
 
     public void start() {
@@ -104,9 +118,9 @@ public class Node {
                         }
                     }
                 }
-            } catch (SocketException e) {
+            } catch (IOException e) {
                 pool.remove(sockAddress);
-            } catch (ClassNotFoundException | IOException e) {
+            } catch (ClassNotFoundException e) {
                 Start.getLogger().error(e);
             }
         }).start();

@@ -14,7 +14,7 @@ public class StreamSocket {
     private Address address;
 
     public StreamSocket(Address address) throws IOException {
-        socket = new Socket(address.getHost(), address.getPort());
+        socket = new Socket(address.getIp(), address.getPort());
         this.address = address;
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectOutputStream.writeObject(Start.getConfig().getLocalAddress());

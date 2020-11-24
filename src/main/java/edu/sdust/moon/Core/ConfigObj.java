@@ -13,10 +13,10 @@ public class ConfigObj {
         return name;
     }
 
-
     public Address getLocalAddress () {
         return localAddress;
     }
+
     public void setName(String name) {
         this.name = name;
     }

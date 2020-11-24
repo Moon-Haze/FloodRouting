@@ -5,6 +5,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 public class SocketPool {
 
@@ -23,10 +24,14 @@ public class SocketPool {
      *
      * @param key 与其相连的节点
      * @return 创建 StreamSock
-     * @throws IOException
      */
-    public StreamSocket put(Address key) throws IOException {
-        StreamSocket value = new StreamSocket(key);
+    public StreamSocket put(Address key) {
+        StreamSocket value = null;
+        try {
+            value = new StreamSocket(key);
+        } catch (IOException e) {
+          Start.getLogger().error("connect the node( " + key + " ) failed");
+        }
         pool.put(key, value);
         return value;
     }
@@ -40,8 +45,7 @@ public class SocketPool {
      */
     public StreamSocket put(Socket socket) throws IOException {
         StreamSocket value = new StreamSocket(socket);
-        Address key = value.getAddress();
-        pool.put(key, value);
+        pool.put(value.getAddress(), value);
         return value;
     }
 
@@ -60,11 +64,12 @@ public class SocketPool {
                             if (!socket.isClosed()) {
                                 socket.close();
                             }
-                            Start.getLogger().info(" Disconnect the node ( " + key + ") ");
                         } catch (IOException e) {
                             Start.getLogger().error(" Disconnect the node ( " + key + ") failed");
                         }
                         pool.remove(key, socket);
+                        Start.getConfig().getNodes().remove(key);
+                        Start.getLogger().info(" Disconnected the node ( " + key + " )");
                         break;
                     }
                 }
@@ -108,5 +113,9 @@ public class SocketPool {
                 }
             }
         }
+    }
+
+    public Set<Address> keySet() {
+        return pool.keySet();
     }
 }

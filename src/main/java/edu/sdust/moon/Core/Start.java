@@ -41,13 +41,7 @@ public class Start {
         try {
             node = Node.createNode(config.getLocalAddress());
             node.start();
-            config.getNodes().forEach(item -> {
-                try {
-                    node.connectNode(item);
-                } catch (IOException e) {
-                    logger.error("connect the node( " + item + " ) failed");
-                }
-            });
+            config.getNodes().forEach(node::connectNode);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(0);
@@ -64,7 +58,6 @@ public class Start {
                         case "help" -> {
                             System.out.println("type in \"stop\"                           Turn off the node");
                             System.out.println("type in \"list\"                           Get a list of node's address");
-                            System.out.println("type in \"connect\"                        Connect other nodes again");
                             System.out.println("type in \"connect <host>:<port>\"          Connect a new node by host and port.");
                             System.out.println("type in \"disconnect <host>:<port>\"       Disconnect the node");
                             System.out.println("type in \"sendData <data> <host>:<port>\"  Send data to one node( host:port )");
@@ -77,8 +70,7 @@ public class Start {
                                 StringBuilder sb = new StringBuilder();
                                 try {
                                     for (int i = 1; i < arg.length - 1; i++) {
-                                        sb.append(arg[i]);
-                                        sb.append(" ");
+                                        sb.append(arg[i]).append(" ");
                                     }
                                 }catch (ArrayIndexOutOfBoundsException e){
                                     e.printStackTrace();
@@ -89,24 +81,8 @@ public class Start {
                             }
                         }
                         case "connect" -> {
-                            if (arg.length == 1) {
-                                config.getNodes().forEach(item -> {
-                                    try {
-                                        node.connectNode(item);
-                                    } catch (IOException e) {
-                                        logger.error("connect the node( " + item + " ) failed");
-                                    }
-                                });
-                            } else if (arg.length == 3) {
-                                Address address = new Address(arg[1]);
-                                try {
-                                    node.connectNode(address);
-                                    config.getNodes().add(address);
-                                    ConfigRead.createReader().Save();
-                                    logger.info("connect the node( " + address + " ) successfully");
-                                } catch (IOException e) {
-                                    logger.error("connect the node( " + address + " ) failed");
-                                }
+                            if (arg.length == 2) {
+                                node.connectNode(Address.createAddress(arg[1]));
                             } else {
                                 logger.error("Incorrect instruction");
                             }
@@ -114,7 +90,7 @@ public class Start {
                         case "list" -> {
                             if (config.getNodes().size() != 0) {
                                 System.out.println("The list of node's address:");
-                                config.getNodes().forEach(System.out::println);
+                                node.getLinkNodes().forEach(System.out::println);
                             } else {
                                 System.out.println("The list of node's address is null.");
                             }
@@ -123,11 +99,7 @@ public class Start {
                             if (arg.length > 2) {
                                 logger.error("Incorrect instruction");
                             } else {
-                                Address address = new Address(arg[1]);
-                                node.disconnectNode(address);
-                                config.getNodes().remove(address);
-                                ConfigRead.createReader().Save();
-                                logger.info(" Disconnected the node ( " + address + " )");
+                                node.disconnectNode( Address.createAddress(arg[1]));
                             }
                         }
                         case "stop" -> {
