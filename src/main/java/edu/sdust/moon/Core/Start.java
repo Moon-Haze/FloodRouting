@@ -98,7 +98,7 @@ public class Start {
                                     }
                                 });
                             } else if (arg.length == 3) {
-                                Address address = new Address(arg[1], Integer.parseInt(arg[2]));
+                                Address address = new Address(arg[1]);
                                 try {
                                     node.connectNode(address);
                                     config.getNodes().add(address);
@@ -120,10 +120,10 @@ public class Start {
                             }
                         }
                         case "disconnect" -> {
-                            if (arg.length < 3) {
+                            if (arg.length > 2) {
                                 logger.error("Incorrect instruction");
                             } else {
-                                Address address = new Address(arg[1], Integer.parseInt(arg[2]));
+                                Address address = new Address(arg[1]);
                                 node.disconnectNode(address);
                                 config.getNodes().remove(address);
                                 ConfigRead.createReader().Save();

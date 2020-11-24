@@ -35,6 +35,12 @@ public class Address implements Serializable {
         this.port = port;
     }
 
+    public Address(String address) {
+        String[] strings = address.split(":");
+        this.host = strings[0];
+        this.port = Integer.parseInt(strings[1]);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

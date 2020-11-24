@@ -7,12 +7,13 @@ import java.nio.charset.StandardCharsets;
 
 public class ConfigRead {
     private File ConfigFile;
+    private static final ConfigRead configRead = new ConfigRead();
 
     private ConfigRead() {
     }
 
     public static ConfigRead createReader() {
-        return new ConfigRead();
+        return configRead;
     }
 
 
