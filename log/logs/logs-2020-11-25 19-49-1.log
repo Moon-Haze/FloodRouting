@@ -1,0 +1,14 @@
+[19:36:14.470][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6869
+[19:36:14.494][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6871
+[19:40:20.938][INFO]Node ( 127.0.0.1:6869 ) had received a package  node from ( 127.0.0.1:6871 )
+
+Package{count=2, message: "hello,hahah ", from 127.0.0.1:6871, to 127.0.0.1:6868}
+
+[19:40:20.952][INFO]Node ( 127.0.0.1:6871 ) had received a repeated Package from ( 127.0.0.1:6871 )
+Package{count=0, message: "hello,hahah ", from 127.0.0.1:6871, to 127.0.0.1:6868}
+[19:40:47.215][INFO] Disconnected the node ( 127.0.0.1:6871 )
+[19:40:54.940][INFO] Disconnected the node ( 127.0.0.1:6869 )

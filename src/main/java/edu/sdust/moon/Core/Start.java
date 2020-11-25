@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Start {
     private static Logger logger = LogManager.getLogger("FloodRouting");
@@ -64,18 +65,15 @@ public class Start {
                         }
                         case "sendData" -> {
                             if (arg.length >= 3) {
-                                for (String s : arg) {
-                                    System.out.println(s);
-                                }
                                 StringBuilder sb = new StringBuilder();
                                 try {
                                     for (int i = 1; i < arg.length - 1; i++) {
                                         sb.append(arg[i]).append(" ");
                                     }
-                                }catch (ArrayIndexOutOfBoundsException e){
+                                } catch (ArrayIndexOutOfBoundsException e) {
                                     e.printStackTrace();
                                 }
-                                node.sendData(sb.toString(), arg[arg.length-1]);
+                                node.sendData(sb.toString(), arg[arg.length - 1]);
                             } else {
                                 logger.error("Incorrect instruction");
                             }
@@ -88,18 +86,19 @@ public class Start {
                             }
                         }
                         case "list" -> {
-                            if (config.getNodes().size() != 0) {
+                            Set<Address> addressSet = node.getLinkNodes();
+                            if (addressSet.isEmpty()) {
+                                System.out.println("No node connecting with.");
+                            } else {
                                 System.out.println("The list of node's address:");
                                 node.getLinkNodes().forEach(System.out::println);
-                            } else {
-                                System.out.println("The list of node's address is null.");
                             }
                         }
                         case "disconnect" -> {
                             if (arg.length > 2) {
                                 logger.error("Incorrect instruction");
                             } else {
-                                node.disconnectNode( Address.createAddress(arg[1]));
+                                node.disconnectNode(Address.createAddress(arg[1]));
                             }
                         }
                         case "stop" -> {

@@ -1,0 +1,9 @@
+[19:57:39.091][INFO]Starting...
+[19:57:39.210][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
+[19:57:39.212][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[19:59:18.502][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello,你好 ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6871
+[19:59:18.503][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello,你好 ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6869

@@ -29,10 +29,10 @@ public class SocketPool {
         StreamSocket value = null;
         try {
             value = new StreamSocket(key);
+            pool.put(key, value);
         } catch (IOException e) {
-          Start.getLogger().error("connect the node( " + key + " ) failed");
+            Start.getLogger().error("connect the node( " + key + " ) failed");
         }
-        pool.put(key, value);
         return value;
     }
 
@@ -58,19 +58,26 @@ public class SocketPool {
             @Override
             public void run() {
                 StreamSocket socket = get(key);
-                while (true) {
-                    if (!takenOut.contains(socket)) {
-                        try {
-                            if (!socket.isClosed()) {
-                                socket.close();
+                if (socket!=null) {
+                    while (true) {
+                        if (!takenOut.contains(socket)) {
+                            try {
+                                if (!socket.isClosed()) {
+                                    socket.close();
+                                    if (removeInPool(key) != null) {
+                                        takenOut.remove(socket);
+                                        Start.getConfig().getNodes().remove(key);
+                                        Start.getLogger().info(" Disconnected the node ( " + key + " )");
+                                        return;
+                                    } else {
+                                        System.out.println("error");
+                                        Start.getLogger().error("The node ( " + key + ") had been disconnect.");
+                                    }
+                                }
+                            } catch (IOException e) {
+                                Start.getLogger().error(" Disconnect the node ( " + key + ") unsuccessfully.");
                             }
-                        } catch (IOException e) {
-                            Start.getLogger().error(" Disconnect the node ( " + key + ") failed");
                         }
-                        pool.remove(key, socket);
-                        Start.getConfig().getNodes().remove(key);
-                        Start.getLogger().info(" Disconnected the node ( " + key + " )");
-                        break;
                     }
                 }
             }
@@ -97,6 +104,17 @@ public class SocketPool {
         takenOut.remove(so);
     }
 
+    public StreamSocket removeInPool(Object key) {
+        StreamSocket socket=null;
+        for (Address address: pool.keySet()) {
+            if (address.equals(key)){
+              socket=pool.remove(address);
+              break;
+            }
+        }
+        return socket;
+    }
+
     public synchronized void removeAll() {
         for (Address address : pool.keySet()) {
             StreamSocket value = get(address);
@@ -113,6 +131,10 @@ public class SocketPool {
                 }
             }
         }
+    }
+
+    public int size() {
+        return pool.size();
     }
 
     public Set<Address> keySet() {

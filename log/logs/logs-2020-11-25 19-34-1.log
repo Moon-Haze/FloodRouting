@@ -1,0 +1,24 @@
+[19:19:21.369][INFO]Starting...
+[19:19:23.420][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:19:25.426][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:19:33.342][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[19:19:53.511][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[19:23:45.492][INFO]Starting...
+[19:23:47.522][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[19:23:47.553][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[19:24:43.962][INFO]Node ( 127.0.0.1:6869 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "hello ", from 127.0.0.1:6869, to 127.0.0.1:6870}
+[19:25:19.894][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
+[19:25:55.159][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[19:30:34.337][INFO]Starting...
+[19:30:34.392][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
+[19:30:36.395][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[19:30:56.434][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[19:32:56.961][INFO] Disconnected the node ( 127.0.0.1:6871 )
+[19:33:07.368][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
+[19:34:40.385][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "狗子 ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6869
+[19:34:40.387][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "狗子 ", from 127.0.0.1:6868, to 127.0.0.1:6871}
+To 127.0.0.1:6871

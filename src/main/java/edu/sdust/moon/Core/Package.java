@@ -1,6 +1,9 @@
 package edu.sdust.moon.Core;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class Package implements Serializable {
     private static int upperLimit = 10;
@@ -8,6 +11,15 @@ public class Package implements Serializable {
     private String message;
     private Address from;
     private Address to;
+
+    public Package() {
+    }
+
+    public Package(String message, Address from, Address to) {
+        this.message = message;
+        this.from = from;
+        this.to = to;
+    }
 
     public void countAdd() {
         count++;
@@ -43,7 +55,7 @@ public class Package implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) return false;
+        if (obj == null) { return false; }
         Package p = (Package) obj;
         return this.to.equals(p.to) && this.from.equals(p.from) && this.message.equals(p.message);
     }
@@ -56,5 +68,9 @@ public class Package implements Serializable {
                 ", from " + from +
                 ", to " + to +
                 '}';
+    }
+
+    public byte[] getBytes() {
+        return this.toString().getBytes(StandardCharsets.UTF_8);
     }
 }

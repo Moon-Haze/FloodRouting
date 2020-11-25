@@ -1,0 +1,23 @@
+[15:35:55.641][INFO]Starting...
+[15:35:57.697][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[15:35:57.718][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:36:54.655][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:37:04.403][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:37:24.374][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:38:20.827][INFO]Starting...
+[15:38:22.872][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[15:38:22.898][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:40:30.346][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:40:54.383][INFO]Starting...
+[15:40:56.434][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[15:40:56.457][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:41:24.856][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:42:20.009][INFO]Starting...
+[15:42:22.049][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[15:42:22.073][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:42:52.279][ERROR]Error in console: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+[15:44:04.963][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:45:10.842][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:45:46.847][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[15:46:11.099][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[15:46:24.023][INFO] Disconnected the node ( 127.0.0.1:6869 )

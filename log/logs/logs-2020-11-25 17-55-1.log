@@ -1,0 +1,7 @@
+[17:43:12.977][INFO]Starting...
+[17:43:15.033][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[17:43:15.058][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[17:44:33.739][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6869}
+To 127.0.0.1:6869
+[17:46:34.687][INFO] Disconnected the node ( 127.0.0.1:6869 )

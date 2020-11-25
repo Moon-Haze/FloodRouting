@@ -1,0 +1,41 @@
+[10:28:15.445][INFO]Starting...
+[10:28:17.503][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:28:17.540][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:29:32.786][ERROR]Error in console: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+[10:29:56.929][INFO]The Node( 127.0.0:6869 ) is not connected
+[10:30:42.943][INFO]Starting...
+[10:30:44.994][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:30:45.020][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:30:57.065][INFO]The Node( 127.0.0:6869 ) is not connected
+[10:31:55.577][INFO]The Node( 127.0.0:6869 ) is not connected
+[10:33:54.161][INFO]The Node( 127.0.0:6869 ) is not connected
+[10:34:48.855][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[10:37:00.387][ERROR]java.net.SocketException: Socket closed
+[10:37:21.218][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[10:42:57.434][INFO]Starting...
+[10:42:59.490][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:42:59.520][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:44:01.879][ERROR]Incorrect instruction
+[10:51:49.273][INFO]Starting...
+[10:51:51.323][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:51:51.350][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:52:17.855][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[10:54:46.611][INFO]Starting...
+[10:54:48.673][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:54:48.695][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:55:12.852][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[10:56:33.573][INFO]Starting...
+[10:56:35.619][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[10:56:35.646][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[10:57:08.309][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[10:58:38.086][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[11:00:19.118][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[11:01:47.187][INFO]Starting...
+[11:01:49.220][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[11:01:49.241][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[11:02:33.018][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[11:09:40.049][INFO]Starting...
+[11:09:42.104][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[11:09:42.129][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[11:10:49.862][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[11:11:26.674][INFO]No node connecting with.

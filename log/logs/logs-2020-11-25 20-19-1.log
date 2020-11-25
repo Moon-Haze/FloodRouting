@@ -1,0 +1,6 @@
+[20:09:58.429][INFO]Starting...
+[20:10:00.446][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:10:00.462][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:10:21.834][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "鐙楀�? ", from 127.0.0.1:6868, to 127.0.0.1:6869}
+To 127.0.0.1:6869

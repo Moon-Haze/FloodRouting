@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
-import java.net.SocketException;
-import java.util.ArrayList;
 import java.util.Set;
 
 public class Node {
@@ -34,8 +32,6 @@ public class Node {
             StreamSocket socket = pool.put(address);
             if (socket != null) {
                 receivePackage(socket);
-                Start.getConfig().getNodes().add(address);
-                Start.getLogger().info("connect the node( " + address + " ) successfully");
             }
         } else {
             Start.getLogger().info("The Node( " + address + " ) had been connected");
@@ -55,6 +51,10 @@ public class Node {
     }
 
     public void sendPackage(Package pkg, Address address) {
+        if (pool.size()==0){
+            Start.getLogger().info("No node connecting with.");
+            return;
+        }
         for (StreamSocket socket : pool.values()) {
             if (!socket.getAddress().equals(address)) {
                 try {
@@ -72,11 +72,7 @@ public class Node {
     }
 
     public void sendData(String data, String address) {
-        Package p = new Package();
-        p.setMessage(data);
-        p.setFrom(this.address);
-        p.setTo(Address.createAddress(address));
-        sendPackage(p, this.address);
+        sendPackage(new Package(data, this.address, Address.createAddress(address)), this.address);
     }
 
     public void receiveSocket() {
@@ -94,27 +90,27 @@ public class Node {
     public void receivePackage(StreamSocket socket) {
         new Thread(() -> {
             Address sockAddress = socket.getAddress();
-            Start.getLogger().info("Connect the node ( " + sockAddress + " ) ");
+            Start.getLogger().info("Connect the node ( " + sockAddress + " ) successfully");
             try {
                 ObjectInputStream ois = socket.getObjectInputStream();
                 Package p;
                 while ((!socket.isClosed()) && (p = (Package) ois.readObject()) != null) {
                     if (registerPackage.contains(p)) {
-                        Start.getLogger().info("Node ( " + sockAddress + " ) had received a repeated Package from ( "
-                                + p.getFrom() + " )\n" + p);
+                        Start.getLogger().info("Node ( " + address + " ) had received a repeated Package from ( "
+                                + sockAddress + " )\n" + p);
                     } else {
                         registerPackage.add(p);
                         if (address.equals(p.getTo())) {
-                            Start.getLogger().info("Node ( " + sockAddress + " ) had received a package  node from ( "
-                                    + p.getFrom() + " )\n\n" + p + "\n");
+                            Start.getLogger().info("Node ( " + address + " ) had received a package  node from ( "
+                                    + sockAddress + " )\n\n" + p + "\n");
                         } else if (p.isUseful()) {
-                            Start.getLogger().info("Node ( " + sockAddress + " ) had received a package to other node from ( "
-                                    + p.getFrom() + " )\n" + p);
+                            Start.getLogger().info("Node ( " + address + " ) had received a package to other node from ( "
+                                    + sockAddress + " )\n" + p);
                             p.countAdd();
                             sendPackage(p, sockAddress);
                         } else {
-                            Start.getLogger().info("Node ( " + sockAddress + " ) had received a invalid Package"
-                                    + " from ( " + p.getFrom() + " )\n" + p);
+                            Start.getLogger().info("Node ( " + address + " ) had received a invalid Package"
+                                    + " from ( " + sockAddress + " )\n" + p);
                         }
                     }
                 }

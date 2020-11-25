@@ -1,0 +1,44 @@
+[20:21:07.378][INFO]Starting...
+[20:21:09.397][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:21:09.414][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:21:31.802][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "ÁãóÂ≠ê ", from 127.0.0.1:6868, to 127.0.0.1:6879}
+To 127.0.0.1:6869
+[20:21:54.788][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[20:29:05.005][INFO]Starting...
+[20:29:07.019][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:29:07.043][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:29:23.392][INFO]Node ( 127.0.0.1:6868 ) has send a Package
+Package{count=0, message: "hello ", from 127.0.0.1:6868, to 127.0.0.1:6869}
+To 127.0.0.1:6869
+[20:31:25.329][INFO]Starting...
+[20:31:27.354][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:31:27.373][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:32:56.948][INFO]Starting...
+[20:32:58.966][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:32:58.984][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:37:30.406][INFO]Starting...
+[20:37:32.421][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:37:34.424][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[20:37:40.889][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:37:55.306][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "hello ", from 127.0.0.1:6869, to 127.0.0.1:6869}
+[20:38:10.566][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "hello,ƒ„∫√ ", from 127.0.0.1:6869, to 127.0.0.1:6869}
+[20:40:44.360][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[20:40:56.291][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:41:03.929][INFO]Starting...
+[20:41:28.382][INFO]Starting...
+[20:41:30.397][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:41:30.413][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:41:50.351][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "hello ", from 127.0.0.1:6869, to 127.0.0.1:6869}
+[20:42:04.356][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "hello,ƒ„π˛ ", from 127.0.0.1:6869, to 127.0.0.1:6869}
+[20:42:48.618][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[20:43:36.088][INFO]Starting...
+[20:43:38.115][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[20:43:40.117][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[20:43:43.381][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[20:44:05.541][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6869 )
+Package{count=0, message: "ÁãóÂ≠ê ", from 127.0.0.1:6869, to 127.0.0.1:7990}

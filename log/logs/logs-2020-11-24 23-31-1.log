@@ -1,0 +1,93 @@
+[22:28:36.344][INFO]Starting...
+[22:28:38.385][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:28:39.920][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:28:39.920][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:29:16.244][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[22:30:36.722][INFO]Starting...
+[22:30:45.488][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:30:53.698][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[22:32:02.765][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:33:40.951][INFO]Starting...
+[22:33:54.378][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:34:08.886][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:34:08.888][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:35:11.117][INFO]Starting...
+[22:35:55.438][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:36:02.143][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:36:02.145][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:37:53.369][INFO] Disconnected the node ( 127.0.0.1:6869 )
+.
+[22:38:09.151][INFO]Starting...
+[22:44:49.367][INFO]Starting...
+[22:46:16.686][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:46:23.056][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[22:47:35.034][INFO]Starting...
+[22:47:41.592][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:47:45.010][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:47:45.011][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:49:25.960][INFO]Starting...
+[22:49:33.090][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:49:41.564][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:49:41.566][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:50:17.692][INFO]Starting...
+[22:50:26.117][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:50:32.502][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:50:32.503][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:51:30.404][INFO]Starting...
+[22:51:49.653][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:52:00.967][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:52:00.967][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[22:55:30.289][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[22:56:10.926][INFO]Starting...
+[22:57:20.217][INFO]Starting...
+[22:57:32.421][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:57:38.024][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[22:58:08.176][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:58:48.638][INFO]Starting...
+[22:58:56.267][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[22:58:58.632][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[22:58:58.632][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[23:01:08.537][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:02:25.719][INFO]Starting...
+[23:03:23.610][INFO]Starting...
+[23:03:25.635][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:03:27.649][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[23:03:42.381][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[23:03:45.447][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:06:10.623][INFO]Starting...
+[23:06:18.302][INFO]Starting...
+[23:06:20.357][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:06:22.365][ERROR]connect the node( 127.0.0.1:6869 ) failed
+[23:06:36.873][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[23:06:58.933][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:06:58.933][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:11:20.687][INFO]Starting...
+[23:11:22.752][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:11:22.771][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[23:11:22.771][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[23:11:39.262][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:11:39.263][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:12:32.334][INFO]Starting...
+[23:12:34.369][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:12:34.386][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[23:12:34.386][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[23:12:52.208][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:13:07.540][INFO]Starting...
+[23:13:09.577][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:13:09.594][INFO]connect the node( 127.0.0.1:6869 ) successfully
+[23:13:09.594][INFO]Connect the node ( 127.0.0.1:6869 ) 
+[23:15:10.698][INFO]Starting...
+[23:15:12.743][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:15:12.763][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[23:15:29.607][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:16:14.905][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[23:17:24.724][INFO]Starting...
+[23:17:26.759][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[23:17:26.785][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[23:17:49.455][INFO] Disconnected the node ( 127.0.0.1:6869 )
+[23:20:23.650][ERROR]java.net.SocketException: Socket closed
+[23:20:44.921][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[23:20:44.923][ERROR]java.net.SocketException: Socket closed
+[23:20:44.924][ERROR]Error in console: java.lang.NullPointerException: Cannot invoke "edu.sdust.moon.Core.StreamSocket.getAddress()" because "socket" is null
+[23:21:12.974][INFO]Starting...
+[23:22:49.530][INFO]Starting...
