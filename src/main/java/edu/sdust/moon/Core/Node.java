@@ -13,8 +13,7 @@ public class Node {
     private final SocketPool pool = SocketPool.createPool();
     private ServerSocket receiver;
 
-    private Node() {
-    }
+    private Node() {}
 
     public static Node createNode(Address address) throws IOException {
         Node node = new Node();

@@ -12,6 +12,7 @@ public class TimeHashSet {
                 for (long item: map.keySet()){
                     if (nowTime-item>Start.getConfig().getPkgLife()){
                         map.remove(item);
+                        Start.getLogger().info("delete a package, key is "+item);
                     }
                 }
             }
@@ -19,6 +20,7 @@ public class TimeHashSet {
     }
 
     public void add(Package value) {
+        Start.getLogger().info("add a package, key is ");
         map.put(new Date(System.currentTimeMillis()).getTime(), value);
     }
 

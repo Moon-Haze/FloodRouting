@@ -9,7 +9,6 @@ public class StreamSocket {
     private final Socket socket;
     private final ObjectOutputStream objectOutputStream;
 
-
     private final ObjectInputStream objectInputStream;
     private Address address;
 
@@ -57,5 +56,4 @@ public class StreamSocket {
     public boolean isClosed() {
         return socket.isClosed();
     }
-
 }

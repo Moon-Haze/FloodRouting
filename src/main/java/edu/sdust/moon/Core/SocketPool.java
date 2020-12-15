@@ -14,17 +14,10 @@ public class SocketPool {
 
     private SocketPool() {
     }
-
     public static SocketPool createPool() {
         return new SocketPool();
     }
 
-    /**
-     * 以 Address 创建 StreamSock 建立两个节点的连接
-     *
-     * @param key 与其相连的节点
-     * @return 创建 StreamSock
-     */
     public StreamSocket put(Address key) {
         StreamSocket value = null;
         try {
@@ -36,13 +29,6 @@ public class SocketPool {
         return value;
     }
 
-    /**
-     * 通过 其他节点的请求连接的 Socket 建立两个节点的连接
-     *
-     * @param socket 其他节点的请求连接的 Socket
-     * @return 创建的 StreamSock
-     * @throws IOException
-     */
     public StreamSocket put(Socket socket) throws IOException {
         StreamSocket value = new StreamSocket(socket);
         pool.put(value.getAddress(), value);
@@ -95,15 +81,12 @@ public class SocketPool {
         return null;
     }
 
-
     public boolean containsKey(Address key) {
         return get(key) != null;
     }
-
     public synchronized void remand(StreamSocket so) {
         takenOut.remove(so);
     }
-
     public StreamSocket removeInPool(Object key) {
         StreamSocket socket=null;
         for (Address address: pool.keySet()) {
@@ -114,7 +97,6 @@ public class SocketPool {
         }
         return socket;
     }
-
     public synchronized void removeAll() {
         for (Address address : pool.keySet()) {
             StreamSocket value = get(address);
@@ -132,11 +114,9 @@ public class SocketPool {
             }
         }
     }
-
     public int size() {
         return pool.size();
     }
-
     public Set<Address> keySet() {
         return pool.keySet();
     }
