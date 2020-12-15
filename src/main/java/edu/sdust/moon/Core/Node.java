@@ -61,8 +61,8 @@ public class Node {
                     ops.writeObject(pkg);
                     ops.flush();
                     pool.remand(socket);
-                    Start.getLogger().info("Node ( " + address + " ) has send a Package\n"
-                            + pkg + "\nTo " + socket.getAddress());
+                    Start.getLogger().info("\033[1;36m "+"Node ( " + address + " ) has send a Package\n"
+                            + pkg + "\nTo " + socket.getAddress() +"\033[0m");
                 } catch (IOException e) {
                     Start.getLogger().error(e);
                 }
@@ -95,21 +95,22 @@ public class Node {
                 Package p;
                 while ((!socket.isClosed()) && (p = (Package) ois.readObject()) != null) {
                     if (registerPackage.contains(p)) {
-                        Start.getLogger().info("Node ( " + address + " ) had received a repeated Package from ( "
-                                + sockAddress + " )\n" + p);
+                        //this is color5
+                        Start.getLogger().info("\033[1;33m "+"Node ( " + address + " ) had received a repeated Package from ( "
+                                + sockAddress + " )\n" + p +"\033[0m");
                     } else {
                         registerPackage.add(p);
                         if (address.equals(p.getTo())) {
-                            Start.getLogger().info("Node ( " + address + " ) had received a package  node from ( "
-                                    + sockAddress + " )\n\n" + p + "\n");
+                            Start.getLogger().info("\033[1;34m "+"Node ( " + address + " ) had received a package  node from ( "
+                                    + sockAddress + " )\n\n" + p+"\033[0m" );
                         } else if (p.isUseful()) {
-                            Start.getLogger().info("Node ( " + address + " ) had received a package to other node from ( "
-                                    + sockAddress + " )\n" + p);
-                            p.countAdd();
+                            Start.getLogger().info("\033[1;35m "+"Node ( " + address + " ) had received a package to other node from ( "
+                                    + sockAddress + " )\n" + p+"\033[0m");
+                            p.countMinus();
                             sendPackage(p, sockAddress);
                         } else {
-                            Start.getLogger().info("Node ( " + address + " ) had received a invalid Package"
-                                    + " from ( " + sockAddress + " )\n" + p);
+                            Start.getLogger().info("\033[1;31m "+"Node ( " + address + " ) had received a invalid Package"
+                                    + " from ( " + sockAddress + " )\n" + p+"\033[0m");
                         }
                     }
                 }
@@ -125,9 +126,8 @@ public class Node {
         pool.removeAll();
         try {
             receiver.close();
-        } catch (IOException e) {
-            Start.getLogger().error(e);
+        } catch (Exception e) {
+            System.exit(0);
         }
-        System.exit(0);
     }
 }

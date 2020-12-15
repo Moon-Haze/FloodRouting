@@ -14,5 +14,6 @@
       "port": 6869
     }
   ],
-  "pkgLife": 60000
+  "pkgLife": 60000,
+  "pkgCount": 10
 }

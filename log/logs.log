@@ -1,26 +1,5 @@
-[20:55:39.350][INFO]Starting...
-[20:55:41.379][ERROR]connect the node( 127.0.0.1:6871 ) failed
-[20:55:43.387][ERROR]connect the node( 127.0.0.1:6869 ) failed
-[20:55:50.195][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
-[20:56:09.180][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
-[20:57:15.456][INFO]Node ( 127.0.0.1:6868 ) has send a Package
-Package{count=0, message: "hello 你好 ", from 127.0.0.1:6868, to 127.0.0.1:6872}
-To 127.0.0.1:6869
-[20:57:15.457][INFO]Node ( 127.0.0.1:6868 ) has send a Package
-Package{count=0, message: "hello 你好 ", from 127.0.0.1:6868, to 127.0.0.1:6872}
-To 127.0.0.1:6871
-[20:58:42.080][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6871 )
-Package{count=1, message: "hello ", from 127.0.0.1:6873, to 127.0.0.1:6870}
-[20:58:42.082][INFO]Node ( 127.0.0.1:6871 ) has send a Package
-Package{count=2, message: "hello ", from 127.0.0.1:6873, to 127.0.0.1:6870}
-To 127.0.0.1:6869
-[21:01:30.736][INFO]Starting...
-[21:01:30.858][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
-[21:01:30.860][INFO]Connect the node ( 127.0.0.1:6871 ) successfully
-[21:01:37.843][INFO]add a package, key is 
-[21:01:37.856][INFO]Node ( 127.0.0.1:6868 ) had received a package to other node from ( 127.0.0.1:6871 )
-Package{count=1, message: "hello ", from 127.0.0.1:6873, to 127.0.0.1:6870}
-[21:01:37.858][INFO]Node ( 127.0.0.1:6871 ) has send a Package
-Package{count=2, message: "hello ", from 127.0.0.1:6873, to 127.0.0.1:6870}
-To 127.0.0.1:6869
-[21:02:37.848][INFO]delete a package, key is 1607259697844
+[09:49:49.717][INFO][1;31m this is color3 [0m
+[09:49:49.881][INFO]Starting...
+[09:49:51.947][ERROR]connect the node( 127.0.0.1:6871 ) failed
+[09:49:51.980][INFO]Connect the node ( 127.0.0.1:6869 ) successfully
+[09:54:30.854][INFO] Disconnected the node ( 127.0.0.1:6869 )

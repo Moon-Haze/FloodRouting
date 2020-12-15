@@ -6,6 +6,7 @@ public class ConfigObj {
 
     private String name ="name";
     private long pkgLife =60*1000;
+    private int pkgCount=10;
     private Address localAddress=new Address ("127.0.0.1",6868);
     private ArrayList<Address> nodes=new ArrayList<> ();
 
@@ -15,6 +16,14 @@ public class ConfigObj {
 
     public Address getLocalAddress () {
         return localAddress;
+    }
+
+    public int getPkgCount() {
+        return pkgCount;
+    }
+
+    public void setPkgCount(int pkgCount) {
+        this.pkgCount = pkgCount;
     }
 
     public void setName(String name) {

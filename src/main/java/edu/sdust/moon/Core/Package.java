@@ -1,13 +1,10 @@
 package edu.sdust.moon.Core;
 
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class Package implements Serializable {
-    private static int upperLimit = 10;
-    private int count = 0;
+    private int count = Start.getConfig().getPkgCount();
     private String message;
     private Address from;
     private Address to;
@@ -21,8 +18,8 @@ public class Package implements Serializable {
         this.to = to;
     }
 
-    public void countAdd() {
-        count++;
+    public void countMinus() {
+        count--;
     }
 
     public String getMessage() {
@@ -38,7 +35,7 @@ public class Package implements Serializable {
     }
 
     public boolean isUseful() {
-        return count <= upperLimit;
+        return count > 0;
     }
 
     public void setMessage(String message) {

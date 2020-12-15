@@ -59,9 +59,15 @@ public class Start {
                         case "help" -> {
                             System.out.println("type in \"stop\"                           Turn off the node");
                             System.out.println("type in \"list\"                           Get a list of node's address");
+                            System.out.println("type in \"count <num>\"                    Sets times a package  forwarded");
                             System.out.println("type in \"connect <host>:<port>\"          Connect a new node by host and port.");
                             System.out.println("type in \"disconnect <host>:<port>\"       Disconnect the node");
                             System.out.println("type in \"sendData <data> <host>:<port>\"  Send data to one node( host:port )");
+                        }
+                        case "count"->{
+                            if (arg.length==2){
+                                config.setPkgCount(Integer.parseInt(arg[1]));
+                            }
                         }
                         case "sendData" -> {
                             if (arg.length >= 3) {

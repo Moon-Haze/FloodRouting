@@ -20,7 +20,6 @@ public class TimeHashSet {
     }
 
     public void add(Package value) {
-        Start.getLogger().info("add a package, key is ");
         map.put(new Date(System.currentTimeMillis()).getTime(), value);
     }
 
