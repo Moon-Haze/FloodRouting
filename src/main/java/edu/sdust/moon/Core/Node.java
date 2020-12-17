@@ -53,6 +53,9 @@ public class Node {
         if (pool.size()==0){
             Start.getLogger().info("No node connecting with.");
             return;
+        }else if(pool.size()==1&&pool.get(address)==null){
+            Start.getLogger().info("No target to send data.");
+            return;
         }
         for (StreamSocket socket : pool.values()) {
             if (!socket.getAddress().equals(address)) {
@@ -61,7 +64,7 @@ public class Node {
                     ops.writeObject(pkg);
                     ops.flush();
                     pool.remand(socket);
-                    Start.getLogger().info("\033[1;36m "+"Node ( " + address + " ) has send a Package\n"
+                    Start.getLogger().info("\033[1;36m "+"Node ( " + this.address + " ) has send a Package\n"
                             + pkg + "\nTo " + socket.getAddress() +"\033[0m");
                 } catch (IOException e) {
                     Start.getLogger().error(e);
@@ -74,13 +77,13 @@ public class Node {
         sendPackage(new Package(data, this.address, Address.createAddress(address)), this.address);
     }
 
-    public void receiveSocket() {
+    private void receiveSocket() {
         new Thread(() -> {
             while (true) {
                 try {
                     receivePackage(pool.put(receiver.accept()));
                 } catch (IOException e) {
-                    Start.getLogger().error(e);
+                    System.exit(0);
                 }
             }
         }).start();
@@ -122,12 +125,10 @@ public class Node {
         }).start();
     }
 
-    public void stop() {
+    public void stop() throws IOException {
         pool.removeAll();
-        try {
-            receiver.close();
-        } catch (Exception e) {
-            System.exit(0);
-        }
+        receiver.close();
+        while (!pool.isAllClose());
+        System.exit(0);
     }
 }

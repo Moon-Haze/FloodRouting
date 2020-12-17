@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 
 public class Package implements Serializable {
-    private int count = Start.getConfig().getPkgCount();
+    private int count = Start.getConfig().getPkgCount()-1;
     private String message;
     private Address from;
     private Address to;

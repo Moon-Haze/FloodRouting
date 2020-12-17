@@ -120,4 +120,12 @@ public class SocketPool {
     public Set<Address> keySet() {
         return pool.keySet();
     }
+    public boolean isAllClose(){
+        for (StreamSocket socket: pool.values()) {
+            if (!socket.isClosed()){
+                return  false;
+            }
+        }
+        return true;
+    }
 }

@@ -59,7 +59,7 @@ public class Start {
                         case "help" -> {
                             System.out.println("type in \"stop\"                           Turn off the node");
                             System.out.println("type in \"list\"                           Get a list of node's address");
-                            System.out.println("type in \"count <num>\"                    Sets times a package  forwarded");
+                            System.out.println("type in \"count <num>\"                    Sets frequency of a package forwarded");
                             System.out.println("type in \"connect <host>:<port>\"          Connect a new node by host and port.");
                             System.out.println("type in \"disconnect <host>:<port>\"       Disconnect the node");
                             System.out.println("type in \"sendData <data> <host>:<port>\"  Send data to one node( host:port )");
@@ -67,6 +67,7 @@ public class Start {
                         case "count"->{
                             if (arg.length==2){
                                 config.setPkgCount(Integer.parseInt(arg[1]));
+                                logger.info("The frequency of a package forwarded is "+arg[1]);
                             }
                         }
                         case "sendData" -> {
@@ -110,7 +111,6 @@ public class Start {
                         case "stop" -> {
                             System.out.println("Stopping...");
                             node.stop();
-                            return;
                         }
                         default -> logger.error("Incorrect instruction");
                     }
