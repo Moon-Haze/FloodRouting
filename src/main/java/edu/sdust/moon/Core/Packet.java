@@ -3,16 +3,16 @@ package edu.sdust.moon.Core;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 
-public class Package implements Serializable {
+public class Packet implements Serializable {
     private int count = Start.getConfig().getPkgCount()-1;
     private String message;
     private Address from;
     private Address to;
 
-    public Package() {
+    public Packet() {
     }
 
-    public Package(String message, Address from, Address to) {
+    public Packet(String message, Address from, Address to) {
         this.message = message;
         this.from = from;
         this.to = to;
@@ -53,13 +53,13 @@ public class Package implements Serializable {
     @Override
     public boolean equals(Object obj) {
         if (obj == null) { return false; }
-        Package p = (Package) obj;
+        Packet p = (Packet) obj;
         return this.to.equals(p.to) && this.from.equals(p.from) && this.message.equals(p.message);
     }
 
     @Override
     public String toString() {
-        return "Package{" +
+        return "Packet{" +
                 "count=" + count +
                 ", message: \"" + message + "\"" +
                 ", from " + from +

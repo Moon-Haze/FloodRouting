@@ -3,7 +3,7 @@ package edu.sdust.moon.Core;
 import java.util.*;
 
 public class TimeHashSet {
-    private HashMap<Long, Package> map = new HashMap<>();
+    private HashMap<Long, Packet> map = new HashMap<>();
 
     public TimeHashSet() {
         new Thread(() -> {
@@ -19,11 +19,11 @@ public class TimeHashSet {
         }).start();
     }
 
-    public void add(Package value) {
+    public void add(Packet value) {
         map.put(new Date(System.currentTimeMillis()).getTime(), value);
     }
 
-    public boolean contains(Package p) {
+    public boolean contains(Packet p) {
         return  map.containsValue(p);
     }
 }
