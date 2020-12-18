@@ -30,7 +30,7 @@ public class Node {
         if (!pool.containsKey(address)) {
             StreamSocket socket = pool.put(address);
             if (socket != null) {
-                receivePackage(socket);
+                receivePacket(socket);
             }
         } else {
             Start.getLogger().info("The Node( " + address + " ) had been connected");
@@ -81,7 +81,7 @@ public class Node {
         new Thread(() -> {
             while (true) {
                 try {
-                    receivePackage(pool.put(receiver.accept()));
+                    receivePacket(pool.put(receiver.accept()));
                 } catch (IOException e) {
                     System.exit(0);
                 }
@@ -89,7 +89,7 @@ public class Node {
         }).start();
     }
 
-    public void receivePackage(StreamSocket socket) {
+    public void receivePacket(StreamSocket socket) {
         new Thread(() -> {
             Address sockAddress = socket.getAddress();
             Start.getLogger().info("Connect the node ( " + sockAddress + " ) successfully");
